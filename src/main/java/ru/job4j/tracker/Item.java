@@ -5,6 +5,11 @@ import java.time.format.DateTimeFormatter;
 
 public class Item {
     private int id;
+
+    public Item(String name) {
+        this.name = name;
+    }
+
     private String name;
     private LocalDateTime created = LocalDateTime.now();
 

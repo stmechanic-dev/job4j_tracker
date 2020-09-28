@@ -1,8 +1,6 @@
 package ru.job4j.tracker;
 
-import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
-import java.util.logging.SocketHandler;
 
 public class StartUI {
     public void init(Scanner scanner, Tracker tracker) {
@@ -15,8 +13,7 @@ public class StartUI {
                 System.out.println("=== Create a new Item ====");
                 System.out.print("Enter name: ");
                 String name = scanner.nextLine();
-                Item item = new Item();
-                item.setName(name);
+                Item item = new Item(name);
                 tracker.add(item);
             } else if (select == 1) {
                 System.out.println("=== All Items List ===");
