@@ -45,8 +45,8 @@ public class Item {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MMMM-EEEE-yyyy HH:mm:ss");
         return "Item{" +
                 "id = " + id +
-                ", name = '" + name + '\''
-                + ", created time = " + created.format(formatter) +
+                ", name = '" + name + '\'' +
+//                + ", created time = " + created.format(formatter) +
                 '}';
     }
 }
