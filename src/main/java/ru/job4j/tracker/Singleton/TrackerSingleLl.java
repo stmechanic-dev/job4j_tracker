@@ -1,6 +1,14 @@
 package ru.job4j.tracker.Singleton;
 
+import ru.job4j.tracker.Tracker;
+
 public class TrackerSingleLl {
+    private Tracker instance = new Tracker();
+
+    public Tracker getInstance() {
+        return instance;
+    }
+
     private TrackerSingleLl() {
     }
 
