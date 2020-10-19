@@ -2,6 +2,10 @@ package ru.job4j.tracker;
 
 import org.hamcrest.Matchers;
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
@@ -11,7 +15,7 @@ public class ValidateInputTest {
     public void whenInvalidInput() {
         Output out = new StubOutput();
         Input in = new StubInput(
-                new String[] {"one", "1"}
+                new ArrayList<>(Arrays.asList("one", "1"))
         );
         ValidateInput input = new ValidateInput(out, in);
         int selected = input.askInt("Enter menu:");
@@ -22,7 +26,7 @@ public class ValidateInputTest {
     public void whenValidInput() {
         Output out = new StubOutput();
         Input in = new StubInput(
-                new String[] {"1"}
+                new ArrayList<>(Arrays.asList("1"))
         );
         ValidateInput input = new ValidateInput(out, in);
         int selected = input.askInt("Enter menu:");
@@ -33,14 +37,13 @@ public class ValidateInputTest {
     public void whenValidOutput() {
         Output out = new StubOutput();
         Input in = new StubInput(
-                new String[] {"one", "1", "0"}
+                new ArrayList<>(Arrays.asList("one", "1", "0"))
         );
         ValidateInput input = new ValidateInput(out, in);
         int selected = input.askInt("Enter menu:");
         Tracker tracker = new Tracker();
-        UserAction[] actions = {
-                new ExitAction()
-        };
+        ArrayList<UserAction> actions = new ArrayList<>();
+        actions.add(new ExitAction());
         new StartUI(out).init(in, tracker, actions);
         assertThat(out.toString(), Matchers.is(
                 String.format("Please enter validate data again.%n"
