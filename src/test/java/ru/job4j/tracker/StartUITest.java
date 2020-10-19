@@ -5,7 +5,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.LinkedList;
+import java.util.List;
 
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsNull.nullValue;
@@ -15,7 +15,7 @@ public class StartUITest {
     @Test
     public void whenAddItem() {
         Output output = new StubOutput();
-        ArrayList<String> answers = new ArrayList<>(Arrays.asList("Fix PC"));
+        List<String> answers = new ArrayList<>(Arrays.asList("Fix PC"));
         Input input = new StubInput(answers);
         Tracker tracker = new Tracker();
         UserAction action = new CreateAction(output);
@@ -32,7 +32,7 @@ public class StartUITest {
                 new ArrayList<>(Arrays.asList("0", "Item name", "1"))
         );
         Tracker tracker = new Tracker();
-        ArrayList<UserAction> actions = new ArrayList<>();
+        List<UserAction> actions = new ArrayList<>();
         actions.add(new CreateAction(output));
         actions.add(new ExitAction());
         new StartUI(output).init(in, tracker, actions);
@@ -43,14 +43,12 @@ public class StartUITest {
     public void whenReplaceItem() {
         Output output = new StubOutput();
         Tracker tracker = new Tracker();
-        /* Добавим в tracker новую заявку */
         Item item = tracker.add(new Item("Replaced item"));
-        /* Входные данные должны содержать ID добавленной заявки item.getId() */
         String replacedName = "New item name";
         Input in = new StubInput(
                 new ArrayList<>(Arrays.asList("0", String.valueOf(item.getId()), replacedName, "1"))
         );
-        ArrayList<UserAction> actions = new ArrayList<>();
+        List<UserAction> actions = new ArrayList<>();
         actions.add(new ReplaceAction(output));
         actions.add(new ExitAction());
         new StartUI(output).init(in, tracker, actions);
@@ -61,13 +59,11 @@ public class StartUITest {
     public void whenDeleteItem() {
         Output output = new StubOutput();
         Tracker tracker = new Tracker();
-        /* Добавим в tracker новую заявку */
         Item item = tracker.add(new Item("Deleted item"));
-        /* Входные данные должны содержать ID добавленной заявки item.getId() */
         Input in = new StubInput(
                 new ArrayList<>(Arrays.asList("0", String.valueOf(item.getId()), "1"))
         );
-        ArrayList<UserAction> actions = new ArrayList<>();
+        List<UserAction> actions = new ArrayList<>();
         actions.add(new DeleteAction(output));
         actions.add(new ExitAction());
         new StartUI(output).init(in, tracker, actions);
@@ -81,7 +77,7 @@ public class StartUITest {
                 new ArrayList<>(Arrays.asList("0"))
         );
         Tracker tracker = new Tracker();
-        ArrayList<UserAction> actions = new ArrayList<>();
+        List<UserAction> actions = new ArrayList<>();
         actions.add(new ExitAction());
         new StartUI(out).init(in, tracker, actions);
         assertThat(out.toString(), is(
@@ -98,7 +94,7 @@ public class StartUITest {
         Input in = new StubInput(
                 new ArrayList<>(Arrays.asList("0", String.valueOf(item.getId()), "1"))
         );
-        ArrayList<UserAction> actions = new ArrayList<>();
+        List<UserAction> actions = new ArrayList<>();
         actions.add(new FindByIdAction(output));
         actions.add(new ExitAction());
         new StartUI(output).init(in, tracker, actions);
@@ -119,7 +115,7 @@ public class StartUITest {
         Input in = new StubInput(
                 new ArrayList<>(Arrays.asList("0", item.getName(), "1"))
         );
-        ArrayList<UserAction> actions = new ArrayList<>();
+        List<UserAction> actions = new ArrayList<>();
         actions.add(new FindByNameAction(output));
         actions.add(new ExitAction());
         new StartUI(output).init(in, tracker, actions);
@@ -140,7 +136,7 @@ public class StartUITest {
         Input in = new StubInput(
                 new ArrayList<>(Arrays.asList("0", "1"))
         );
-        ArrayList<UserAction> actions = new ArrayList<>();
+        List<UserAction> actions = new ArrayList<>();
         actions.add(new ListAction(output));
         actions.add(new ExitAction());
         new StartUI(output).init(in, tracker, actions);
@@ -160,7 +156,7 @@ public class StartUITest {
                 new ArrayList<>(Arrays.asList("1", "0"))
         );
         Tracker tracker = new Tracker();
-        ArrayList<UserAction> actions = new ArrayList<>();
+        List<UserAction> actions = new ArrayList<>();
         actions.add(new ExitAction());
         new StartUI(out).init(in, tracker, actions);
         assertThat(out.toString(), Matchers.is(
