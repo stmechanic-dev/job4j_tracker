@@ -14,7 +14,6 @@ public class ConvertList2Array {
                 row++;
                 cell = 0;
             }
-
         }
         return array;
     }
