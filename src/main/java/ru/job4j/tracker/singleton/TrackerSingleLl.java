@@ -1,4 +1,4 @@
-package ru.job4j.tracker.Singleton;
+package ru.job4j.tracker.singleton;
 
 import ru.job4j.tracker.Tracker;
 
@@ -9,14 +9,11 @@ public class TrackerSingleLl {
         return instance;
     }
 
-    private TrackerSingleLl() {
-    }
-
     public static TrackerSingleLl getTracker() {
-        return Holder.tracker;
+        return Holder.TRACKER;
     }
 
     public static final class Holder {
-        private static final TrackerSingleLl tracker = new TrackerSingleLl();
+        private static final TrackerSingleLl TRACKER = new TrackerSingleLl();
     }
 }

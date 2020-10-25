@@ -13,12 +13,13 @@ public class SortMaxToMinTest {
     @Test
     public void whenSort() {
         List<Item> list = new ArrayList<>();
-        list.add(new Item(2,"b"));
-        list.add(new Item(3,"c"));
-        list.add(new Item(1,"a"));
+        list.add(new Item(2, "b"));
+        list.add(new Item(3, "c"));
+        list.add(new Item(1, "a"));
         SortMaxToMin.sort(list);
         String s = list.toString();
-        String expected = "[Item{id = 3, name = 'c'}, Item{id = 2, name = 'b'}, Item{id = 1, name = 'a'}]";
+        String expected = "[Item{id = 3, name = 'c'}, Item{id = 2, name = 'b'},"
+                + " Item{id = 1, name = 'a'}]";
         assertThat(s, is(expected));
     }
 }

@@ -1,19 +1,16 @@
-package ru.job4j.tracker.Singleton;
+package ru.job4j.tracker.singleton;
 
 import ru.job4j.tracker.Tracker;
 
 public class TrackerSingleEl {
-    private static final TrackerSingleEl tracker = new TrackerSingleEl();
+    private static final TrackerSingleEl TRACKER = new TrackerSingleEl();
     private Tracker instance = new Tracker();
 
     public Tracker getInstance() {
         return instance;
     }
 
-    private TrackerSingleEl() {
-    }
-
     public static TrackerSingleEl getTracker() {
-        return tracker;
+        return TRACKER;
     }
 }
