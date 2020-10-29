@@ -7,11 +7,7 @@ import java.util.Set;
 public class Article {
     public static boolean generateBy(String origin, String line) {
         boolean rsl = true;
-        String tmp = origin.replaceAll("\\.", "");
-        tmp = tmp.replaceAll(",", "");
-        tmp = tmp.replaceAll(";", "");
-        tmp = tmp.replaceAll(":", "");
-        tmp = tmp.replaceAll("!", "");
+        String tmp = origin.replaceAll("\\p{P}", "");
         Set<String> origSet = new HashSet<>(Arrays.asList(tmp.split(" ")));
         Set<String> lineSet = new HashSet<>(Arrays.asList(line.split(" ")));
         for (String s : lineSet) {
