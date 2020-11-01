@@ -14,6 +14,7 @@ public class Departments {
                     tmp.add(start);
                 } else {
                     tmp.add(start + "/" + el);
+                    start += "/" + el;
                 }
             }
         }
