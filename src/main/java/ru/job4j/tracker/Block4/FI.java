@@ -19,6 +19,11 @@ public class FI {
             }
         };
         Arrays.sort(sts, comparator);
+
+        Comparator<Attachment> cmpDescText = (left, right) -> {
+            System.out.println("compare - " + right.getName() + " : " + left.getName());
+            return right.getName().compareTo(left.getName());
+        };
     }
 
     public static void raw(List<Student> list, Function<Student, InputStream> func) {
