@@ -10,9 +10,13 @@ public class Profile {
         this.address = address;
     }
 
+    public Address getAddress() {
+        return address;
+    }
+
     public static List<Address> collect(List<Profile> profiles) {
         List<Address> list = profiles.stream()
-                            .map(addr -> addr.address)
+                            .map(Profile::getAddress)
                             .collect(Collectors.toList());
 
         return list;
