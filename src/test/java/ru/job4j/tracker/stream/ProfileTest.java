@@ -15,7 +15,7 @@ public class ProfileTest {
         List<Profile> prof = Arrays.asList(new Profile(
                             new Address("Balashikha", "Lenina", 5, 4))
                 , new Profile(new Address("Bryansk", "Pushkina", 7, 2)));
-        List<Address> result = Profile.collect(prof);
+        List<Address> result = Profiles.collect(prof);
         List<Address> expexted = Arrays.asList
                 (new Address("Balashikha", "Lenina", 5, 4)
                  , new Address("Bryansk", "Pushkina", 7, 2));

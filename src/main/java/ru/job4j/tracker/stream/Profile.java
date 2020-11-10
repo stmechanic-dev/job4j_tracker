@@ -13,12 +13,4 @@ public class Profile {
     public Address getAddress() {
         return address;
     }
-
-    public static List<Address> collect(List<Profile> profiles) {
-        List<Address> list = profiles.stream()
-                            .map(Profile::getAddress)
-                            .collect(Collectors.toList());
-
-        return list;
-    }
 }
