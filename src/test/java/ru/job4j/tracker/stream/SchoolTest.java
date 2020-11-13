@@ -3,8 +3,7 @@ package ru.job4j.tracker.stream;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import java.util.function.Predicate;
 
 import static org.hamcrest.core.Is.is;
@@ -60,5 +59,23 @@ public class SchoolTest {
         expected.add(new Student(30, "Surname3"));
         expected.add(new Student(40, "Surname4"));
         assertThat(rsl, is(expected));
+    }
+
+    @Test
+    public void whenListToMap() {
+        School sc = new School();
+        Map<String, Student> result = sc.collectToMap(students);
+        Map<String, Student> res = new TreeMap<>(result);
+        Map<String, Student> expected = new TreeMap<>();
+        expected.put("Surname1", students.get(0));
+        expected.put("Surname2", students.get(1));
+        expected.put("Surname3", students.get(2));
+        expected.put("Surname4", students.get(3));
+        expected.put("Surname5", students.get(4));
+        expected.put("Surname6", students.get(5));
+        expected.put("Surname7", students.get(6));
+        expected.put("Surname8", students.get(7));
+        expected.put("Surname9", students.get(8));
+        assertThat(res, is(expected));
     }
 }
