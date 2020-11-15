@@ -1,8 +1,10 @@
 package ru.job4j.tracker.stream;
 
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -15,11 +17,11 @@ public class School {
     }
 
     public Map<String, Student> collectToMap(List<Student> students) {
-        Map<String, Student> map = students.stream().distinct().collect
+        Map<String, Student> map = students.stream().collect
                 (Collectors.toMap(
-                      x -> x.getSurname(),
-                      x -> x
-                ));
+                      Student::getSurname,
+                      Function.identity(),
+                        (x, replacement) -> x));
         return map;
     }
 }
