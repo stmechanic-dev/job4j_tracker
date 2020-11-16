@@ -38,7 +38,7 @@ public class BankService {
         if (findU != null) {
             find = users.get(findU).stream()
                     .filter(x -> x.getRequisite().equals(requisite))
-                    .findFirst().get();
+                    .findFirst().orElse(null);
         }
         return find;
     }
