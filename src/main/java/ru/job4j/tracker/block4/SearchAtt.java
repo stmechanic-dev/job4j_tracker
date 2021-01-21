@@ -1,6 +1,5 @@
-package ru.job4j.tracker.Block4;
+package ru.job4j.tracker.block4;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;

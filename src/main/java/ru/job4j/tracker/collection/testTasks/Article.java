@@ -1,4 +1,4 @@
-package ru.job4j.tracker.collection.TestTasks;
+package ru.job4j.tracker.collection.testTasks;
 
 import java.util.Arrays;
 import java.util.HashSet;

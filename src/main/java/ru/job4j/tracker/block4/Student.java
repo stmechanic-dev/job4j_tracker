@@ -1,4 +1,4 @@
-package ru.job4j.tracker.Block4;
+package ru.job4j.tracker.block4;
 
 public class Student {
     private String name;

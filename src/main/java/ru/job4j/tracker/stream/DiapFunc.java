@@ -1,6 +1,6 @@
 package ru.job4j.tracker.stream;
 
-import ru.job4j.tracker.Block4.Function;
+import ru.job4j.tracker.block4.Function;
 
 import java.util.ArrayList;
 import java.util.List;
