@@ -1,4 +1,4 @@
-package ru.job4j.tracker.stream.Attestation;
+package ru.job4j.tracker.stream.attestation;
 
 public class Subject {
     private String name;

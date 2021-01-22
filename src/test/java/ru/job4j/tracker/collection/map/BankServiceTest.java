@@ -46,8 +46,7 @@ public class BankServiceTest {
         bank.addUser(user);
         bank.addAccount(user.getPassport(), new Account("5546", 150D));
         bank.addAccount(user.getPassport(), new Account("113", 50D));
-        bank.transferMoney(user.getPassport(), "5546"
-                        , user.getPassport(), "113", 150D);
+        bank.transferMoney(user.getPassport(),  "5546", user.getPassport(), "113", 150D);
         Optional<Account> opt = bank.findByRequisite(user.getPassport(), "113");
         opt.ifPresent(balance -> assertThat(balance.getBalance(), is(200D)));
     }

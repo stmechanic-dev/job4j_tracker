@@ -17,8 +17,8 @@ public class School {
     }
 
     public Map<String, Student> collectToMap(List<Student> students) {
-        Map<String, Student> map = students.stream().collect
-                (Collectors.toMap(
+        Map<String, Student> map = students.stream().collect(
+                Collectors.toMap(
                       Student::getSurname,
                       Function.identity(),
                         (x, replacement) -> x));

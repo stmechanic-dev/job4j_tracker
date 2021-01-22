@@ -1,4 +1,4 @@
-package ru.job4j.tracker.collection.testTasks;
+package ru.job4j.tracker.collection.testtasks;
 
 import static org.junit.Assert.assertThat;
 import static org.hamcrest.Matchers.is;

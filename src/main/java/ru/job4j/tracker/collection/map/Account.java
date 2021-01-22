@@ -45,6 +45,7 @@ public class Account {
      * Метод предоставляет данные по балансу счета.
      * @return возвращает баланс объекта.
      */
+
     public double getBalance() {
         return balance;
     }
